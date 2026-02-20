@@ -1,54 +1,51 @@
-# 📧 PhishDetect AI — Real-Time Email Phishing Scanner
+# 🛡️ PhishDetect AI — Real-Time Phishing Email Scanner
 
-PhishDetect AI is a lightweight web application built using **Streamlit** that analyzes email text and detects potential phishing attempts in real time.
+An interactive web app that detects phishing emails using a rule-based AI approach.
+Built during the **National Level Conclave – NextEdge: Data Analytics & Cyber Security** organized by **Vivekanand Education Society's Institute of Technology** in collaboration with **IEEE Bombay Section**.
 
-It scans emails for commonly used phishing keywords and classifies them as:
+---
 
-- ✅ **Safe**
+## 🚀 What This Project Does
+
+PhishDetect AI analyzes email text and classifies it into:
+
+- 🔴 **Phishing**
 - ⚠️ **Suspicious**
-- 🚨 **Phishing**
+- ✅ **Safe**
 
-> Developed during the **AI in Cybersecurity** track at the *National Level Conclave – NextEdge: Data Analytics & Cyber Security* organized by **Vivekanand Education Society's Institute of Technology** in collaboration with **IEEE Bombay Section**.
+The system simulates a basic AI security filter by checking for commonly used phishing patterns such as urgency, credential requests, and malicious prompts.
 
----
-
-## 🚀 Features
-
-- ⚡ Instant phishing detection
-- 📊 Confidence score output
-- 🎲 Random sample email generator
-- 🖥️ Clean and interactive UI
-- 🔰 Beginner-friendly cybersecurity project
+> This project focuses on learning how cybersecurity detection systems work internally — not building a production anti-spam filter.
 
 ---
 
-## 🧠 How It Works
+## 🖥️ Demo Features
 
-The app uses a **keyword-based scoring system**. Each suspicious keyword found in the email increases a risk score.
-
-| Keyword Type     | Examples                   |
-|------------------|----------------------------|
-| Urgency          | urgent, limited time       |
-| Account Threat   | account locked, verify     |
-| Credential Theft | login, password            |
-| Scam Hooks       | click here, invoice        |
-
-**Final Classification:**
-
-| Score | Result        |
-|-------|---------------|
-| 0–19  | Safe ✅        |
-| 20–39 | Suspicious ⚠️ |
-| 40+   | Phishing 🚨    |
+- Paste any email content and scan instantly
+- Auto-generated sample phishing emails
+- Confidence score based on detected patterns
+- Simple browser interface (Streamlit)
 
 ---
 
-## 🛠️ Tech Stack
+## 🧠 Detection Logic
 
-| Technology | Usage            |
-|------------|------------------|
-| Python     | Core logic       |
-| Streamlit  | Web UI framework |
+The AI uses handcrafted rules based on common phishing behavior:
+
+| Trigger Type        | Example                          |
+|---------------------|----------------------------------|
+| Urgency             | "urgent", "limited time"         |
+| Credential Theft    | "login", "verify password"       |
+| Threat Messages     | "account locked"                 |
+| Social Engineering  | "click here", "invoice"          |
+
+Each detected keyword increases a risk score.
+
+```
+Score ≥ 40 → Phishing 🚨
+Score ≥ 20 → Suspicious ⚠️
+Score < 20 → Safe ✅
+```
 
 ---
 
@@ -63,16 +60,16 @@ PhishDetect_AI/
 
 ---
 
-## 📦 Installation
+## ⚙️ Installation
 
-**1. Clone the repository:**
+**1️⃣ Clone the repository**
 
 ```bash
 git clone https://github.com/Dishammb/PhishDetect_AI.git
 cd PhishDetect_AI
 ```
 
-**2. Install dependencies:**
+**2️⃣ Install dependencies**
 
 ```bash
 pip install -r requirements.txt
@@ -80,13 +77,13 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run the Application
+## ▶️ Run the Web App
 
 ```bash
 streamlit run app.py
 ```
 
-Then open in your browser (usually):
+Then open the local URL shown in your terminal (usually):
 
 ```
 http://localhost:8501
@@ -94,47 +91,46 @@ http://localhost:8501
 
 ---
 
-## 💻 App Code Overview
+## 🧪 Example
 
-The UI provides two actions:
-- **🔍 Scan Email** — paste any email text and get an instant result
-- **🎲 Load Sample Email** — auto-load a test email to try the scanner
+**Input:**
+```
+Urgent: Your account has been locked. Click here to verify your password.
+```
 
----
-
-## 🎲 Sample Emails Included
-
-- 📬 Account verification alerts
-- 🎰 Lottery scams
-- 📅 Meeting reminders
-- 🔑 Password reset requests
+**Output:**
+```
+Result: Phishing 🚨
+Confidence Score: 60%
+```
 
 ---
 
-## 📚 Educational Purpose
+## 🎯 Learning Outcomes
 
-This project is designed for:
+- Rule-based AI decision systems
+- Cybersecurity threat indicators
+- Social engineering patterns
+- Building security tools using Streamlit
 
-- 🛡️ Cybersecurity beginners
-- 🎓 Students learning phishing detection
-- 🐍 Python & Streamlit practice
+---
 
-> **Note:** This is a simulation tool and not a production-grade security system.
+## 🔮 Future Improvements
+
+- Machine Learning classifier (Naive Bayes / NLP)
+- URL feature extraction
+- Email header analysis
+- Attachment scanning
+- Real-time Gmail/Outlook integration
 
 ---
 
 ## 🙌 Acknowledgements
 
-Thanks to the mentors, speakers, and organizers of the NextEdge Conclave for guidance and inspiration.
+Developed during the **AI in Cybersecurity** track at the conclave. Thanks to mentors, speakers, and organizers for guidance and inspiration.
 
 ---
 
-## 👨‍💻 Author
+## ⭐ About
 
-**[@dishammb](https://github.com/Dishammb)** 
-
----
-
-## 📄 License
-
-This project is open-source and free to use for educational purposes.
+This is a beginner cybersecurity project meant for **educational demonstration purposes**.
