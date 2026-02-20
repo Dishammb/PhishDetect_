@@ -1,0 +1,18 @@
+# Normalize all text files
+* text=auto
+
+# Python must always stay LF (Linux compatible)
+*.py text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# Config files
+*.txt text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+
+# Never try to diff virtual environments
+*.venv binary
+*.pkl binary
+*.model binary
